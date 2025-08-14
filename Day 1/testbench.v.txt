@@ -1,0 +1,17 @@
+
+module test_and_gate;
+  wire c;
+  reg a,b;
+  and_gate uut(.a(a),.b(b),.c(c));
+  
+  initial begin
+        // Apply test values
+        a = 0; b = 0; #10;  // After 10 time units
+        a = 0; b = 1; #10;
+        a = 1; b = 0; #10;
+        a = 1; b = 1; #10;
+
+        $stop; // End simulation
+    end
+endmodule
+  
